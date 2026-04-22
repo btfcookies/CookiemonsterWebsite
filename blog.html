@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookiemonster | Blog</title>
+    <link rel="icon" type="image/x-icon" href="pfp (1).png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="site-noise"></div>
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <img src="pfp (1).png" alt="Cookiemonster logo">
+            <span>cookiemonster</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a class="active" href="blog.html">blog</a>
+            <a href="contact.html">contact</a>
+        </nav>
+    </header>
+
+    <main class="page-wrap">
+        <section class="panel">
+            <p class="section-label">blog</p>
+            <h1 class="page-title">Dev Logs</h1>
+            <p class="lede">This is where I have documnented my journey as a programmer</p>
+        </section>
+
+        <section class="panel post-list">
+            
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>2026 cookiemonster. crafted with code.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+    <script>
+        function dedentMarkdown(text) {
+            const normalized = text.replace(/\t/g, "    ");
+            const lines = normalized.split("\n");
+            const contentLines = lines.filter(line => line.trim().length > 0);
+
+            if (contentLines.length === 0) {
+                return "";
+            }
+
+            const indent = Math.min(
+                ...contentLines.map(line => (line.match(/^\s*/) || [""])[0].length)
+            );
+
+            return lines.map(line => line.slice(indent)).join("\n").trim();
+        }
+
+        marked.setOptions({
+            gfm: true,
+            breaks: false,
+            mangle: false,
+            headerIds: true
+        });
+
+        const posts = document.querySelectorAll('[data-post]');
+
+        posts.forEach(post => {
+            const markdownSource = post.querySelector('.post-markdown');
+            const markdownTarget = post.querySelector('.markdown-body');
+            const toggleButton = post.querySelector('.post-toggle');
+            const toggleLabel = post.querySelector('.post-toggle-label');
+            const content = post.querySelector('.post-content');
+            const markdown = dedentMarkdown(markdownSource.textContent || '');
+            const rendered = marked.parse(markdown);
+
+            markdownTarget.innerHTML = DOMPurify.sanitize(rendered);
+
+            toggleButton.addEventListener('click', () => {
+                const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+                toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+                toggleLabel.textContent = isExpanded ? 'expand' : 'collapse';
+                content.hidden = isExpanded;
+            });
+        });
+    </script>
+</body>
+</html>
