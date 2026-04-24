@@ -343,17 +343,27 @@ h3 {
 
 .post-content {
     border-top: 1px solid rgba(110, 201, 255, 0.2);
-    padding: 14px;
+    padding: 18px;
 }
 
 .markdown-body {
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: 1.85;
+    font-size: 0.98rem;
+    max-width: 72ch;
     word-break: break-word;
 }
 
 .markdown-body > * + * {
-    margin-top: 0.8rem;
+    margin-top: 0.95rem;
+}
+
+.markdown-body p {
+    color: #b7d6eb;
+}
+
+.markdown-body p:first-of-type {
+    color: #d2ecff;
 }
 
 .markdown-body h1,
@@ -363,8 +373,21 @@ h3 {
 .markdown-body h5,
 .markdown-body h6 {
     color: var(--text);
-    margin-top: 1.25rem;
+    line-height: 1.3;
+    margin-top: 1.45rem;
     margin-bottom: 0.6rem;
+}
+
+.markdown-body h1 {
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+}
+
+.markdown-body h2 {
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+}
+
+.markdown-body h3 {
+    font-size: clamp(1.08rem, 1.7vw, 1.25rem);
 }
 
 .markdown-body h1,
@@ -375,11 +398,16 @@ h3 {
 
 .markdown-body ul,
 .markdown-body ol {
-    margin-left: 1.4rem;
+    margin-left: 1.5rem;
+    padding-left: 0.2rem;
 }
 
 .markdown-body li + li {
-    margin-top: 0.25rem;
+    margin-top: 0.35rem;
+}
+
+.markdown-body li::marker {
+    color: var(--accent-soft);
 }
 
 .markdown-body a {
@@ -398,15 +426,16 @@ h3 {
     background: rgba(7, 19, 31, 0.8);
     border: 1px solid rgba(110, 201, 255, 0.24);
     border-radius: 6px;
-    padding: 0.1rem 0.35rem;
+    padding: 0.12rem 0.38rem;
     color: var(--warn);
 }
 
 .markdown-body pre {
-    background: rgba(7, 19, 31, 0.92);
-    border: 1px solid rgba(110, 201, 255, 0.24);
-    border-radius: 10px;
-    padding: 0.9rem;
+    background: linear-gradient(160deg, rgba(6, 16, 28, 0.96), rgba(8, 22, 36, 0.9));
+    border: 1px solid rgba(110, 201, 255, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     overflow-x: auto;
 }
 
@@ -419,16 +448,19 @@ h3 {
 }
 
 .markdown-body blockquote {
-    border-left: 3px solid rgba(77, 224, 209, 0.6);
+    border-left: 3px solid rgba(77, 224, 209, 0.7);
+    background: rgba(77, 224, 209, 0.06);
+    border-radius: 0 8px 8px 0;
     margin: 0;
-    padding: 0.2rem 0 0.2rem 0.8rem;
+    padding: 0.45rem 0.75rem;
     color: #9dc5df;
 }
 
 .markdown-body table {
     width: 100%;
+    display: block;
     border-collapse: collapse;
-    overflow: hidden;
+    overflow-x: auto;
     border-radius: 8px;
     border: 1px solid rgba(110, 201, 255, 0.24);
 }
@@ -443,6 +475,36 @@ h3 {
 .markdown-body th {
     color: var(--text);
     background: rgba(77, 224, 209, 0.1);
+}
+
+.markdown-body hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(110, 201, 255, 0.42), transparent);
+    margin: 1.4rem 0;
+}
+
+.markdown-body strong {
+    color: #e9f8ff;
+}
+
+.markdown-body em {
+    color: #bfe5fa;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(110, 201, 255, 0.28);
+}
+
+.markdown-body pre::-webkit-scrollbar {
+    height: 9px;
+}
+
+.markdown-body pre::-webkit-scrollbar-thumb {
+    background: rgba(110, 201, 255, 0.35);
+    border-radius: 999px;
 }
 
 .markdown-body input[type="checkbox"] {
@@ -510,5 +572,14 @@ h3 {
 
     .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    .post-content {
+        padding: 14px;
+    }
+
+    .markdown-body {
+        font-size: 0.94rem;
+        line-height: 1.75;
     }
 }

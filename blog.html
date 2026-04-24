@@ -30,7 +30,51 @@
         </section>
 
         <section class="panel post-list">
-            
+            <article class="post" data-post>
+                <button class="post-toggle" type="button" aria-expanded="false">
+                    <div>
+                        <p class="post-meta">April 24, 2026 • devlog</p>
+                        <h2>Debugging Cortis</h2>
+                        <p class="post-preview">I spend about 2 days trying to figure out a bug with Cortis' API... Click 'expand' to read more.</p>
+                    </div>
+                    <span class="post-toggle-label">expand</span>
+                </button>
+
+                <div class="post-content" hidden>
+                    <div class="markdown-body"></div>
+                    <script type="text/plain" class="post-markdown">
+                        ## Debugging Cortis
+
+                        **For 2 days, I couldn't figure out a strange error coming form Cortis' UI.**
+
+                        > The error:
+
+                        ```txt
+                        ReferenceError: Cannot access 'state' before initialization
+                            at getUser (C:\Users\Lawrence Tong\Desktop\Projects\cortis\server\index.js:148:3)
+                            at befriend (C:\Users\Lawrence Tong\Desktop\Projects\cortis\server\index.js:171:17)
+                            at createSeedState (C:\Users\Lawrence Tong\Desktop\Projects\cortis\server\index.js:63:3)
+                            at Object.<anonymous> (C:\Users\Lawrence Tong\Desktop\Projects\cortis\server\index.js:33:15)
+                            at Module._compile (node:internal/modules/cjs/loader:1759:14)
+                            at Object..js (node:internal/modules/cjs/loader:1892:10)
+                            at Module.load (node:internal/modules/cjs/loader:1479:32)
+                            at Module._load (node:internal/modules/cjs/loader:1298:12)
+                            at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+                            at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+                        ```
+
+                        ---
+
+                        I initially thought this was coming from the `createSeedState()` function, where it returned the state data using `return state.data`, which I replaced with `return data`.
+
+                        However, I got the same error after running the server again.
+
+                        I eventually tried adding a seperate definition of state, `let state` before the function `createSeedState()` was called.
+
+                        This worked, which helped me realize that the error was caused by a temporal dead zone where `state` was being accessed before it was initialized.
+                    </script>
+                </div>
+            </article>
         </section>
     </main>
 
