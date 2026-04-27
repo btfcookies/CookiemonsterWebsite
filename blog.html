@@ -33,6 +33,32 @@
             <article class="post" data-post>
                 <button class="post-toggle" type="button" aria-expanded="false">
                     <div>
+                        <p class="post-meta">April 27, 2026 • devlog</p>
+                        <h2>Discord UI</h2>
+                        <p class="post-preview">When working on Cortis, I noticed something wierd about Discord's UI...Click 'expand' to read more.</p>
+                    </div>
+                    <span class="post-toggle-label">expand</span>
+                </button>
+
+                <div class="post-content" hidden>
+                    <div class="markdown-body"></div>
+                    <script type="text/plain" class="post-markdown">
+                        ## Discord UI
+
+                        While working on Cortis recently, I noticed that Cortis' UI looked very cramped compared to Discord's UI, even though the actual spacing of each section of the site was roughly the same, and some parts of Cortis' UI were actually more spacious than Discord's.
+
+                        I took a closer look at Discord's UI and found something interesting. Discord actually uses slightly different colors for each section of the site, which gives the illusion that each section is more spaced out than it actually is.
+
+                        Not only that, instead of using bold lines to seperate each section, Discord uses very subtle, thin lines which also gives the illusion of more space.
+
+                        I think this is a really clever UI feature, and I might try implementing something similar in Cortis' UI in the future.
+                    </script>
+                </div>
+            </article>
+
+            <article class="post" data-post>
+                <button class="post-toggle" type="button" aria-expanded="false">
+                    <div>
                         <p class="post-meta">April 24, 2026 • devlog</p>
                         <h2>Debugging Cortis</h2>
                         <p class="post-preview">I spend about 2 days trying to figure out a bug with Cortis' API... Click 'expand' to read more.</p>
@@ -45,7 +71,7 @@
                     <script type="text/plain" class="post-markdown">
                         ## Debugging Cortis
 
-                        **For 2 days, I couldn't figure out a strange error coming form Cortis' api.**
+                        **For 2 days, I couldn't figure out a strange error coming from Cortis' API.**
 
                         > The error:
 
