@@ -33,6 +33,26 @@
             <article class="post" data-post>
                 <button class="post-toggle" type="button" aria-expanded="false">
                     <div>
+                        <p class="post-meta">May 13, 2026 • qbreader devlog</p>
+                        <h2>stuff</h2>
+                        <p class="post-preview">i finally learned backend :) Click 'expand' to preview it.</p>
+                    </div>
+                    <span class="post-toggle-label">expand</span>
+                </button>
+
+                <div class="post-content" hidden>
+                    <div class="markdown-body"></div>
+                    <script type="text/plain" class="post-markdown">
+                        ## an error in qbreader
+
+                        This was in reality a really simple error, but it took me like an hour to find out the cause. The error was that on qbreader, the clear stats button would only reset tossup points in multiplayer rooms, but it wouldn't reset bonus points until the user reloaded the page. I couldn't figure out what was wrong, since `BonusRoom.clearStats()` didn't seem to have any issues. Eventually, I realized that the issue was in the client side code, where the `clearStats()` function only affected tossup points.
+                    </script>
+                </div>
+            </article>
+
+            <article class="post" data-post>
+                <button class="post-toggle" type="button" aria-expanded="false">
+                    <div>
                         <p class="post-meta">April 27, 2026 • devlog</p>
                         <h2>Discord UI</h2>
                         <p class="post-preview">When working on Cortis, I noticed something wierd about Discord's UI...Click 'expand' to read more.</p>
@@ -152,19 +172,13 @@
             let codeBuffer = [];
 
             function flushParagraph() {
-                if (paragraph.length === 0) {
-                    return;
-                }
-
+                if (paragraph.length === 0) return;
                 html.push(`<p>${parseInlineMarkdown(paragraph.join(' '))}</p>`);
                 paragraph = [];
             }
 
             function flushList() {
-                if (listItems.length === 0) {
-                    return;
-                }
-
+                if (listItems.length === 0) return;
                 html.push(`<ul>${listItems.map(item => `<li>${parseInlineMarkdown(item)}</li>`).join('')}</ul>`);
                 listItems = [];
             }
@@ -180,7 +194,6 @@
                         flushParagraph();
                         flushList();
                     }
-
                     inCodeBlock = !inCodeBlock;
                     continue;
                 }
