@@ -1,0 +1,294 @@
+body{
+  /* !important: react-chrono injects its own global `body { background-color, color, font-family }`
+     rule at mount time, which loads after this stylesheet and would otherwise win the cascade
+     and repaint the whole site (not just the timeline) white with dark text. */
+  background-color: #252525 !important;
+  color: #ffffff !important;
+}
+
+
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 85px;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.Typewriter__wrapper {
+  font-family: 'Seg', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.Typewriter__cursor {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.bio{
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 150;
+  font-size: 20px;
+  color: #fff;
+  max-width: 900px;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.bloom-text{
+  font-weight: 600;
+  background: linear-gradient(90deg, #ffffff 0%, #f2f6ff 35%, #ffffff 60%, #dfe9ff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.55),
+    0 0 20px rgba(255, 255, 255, 0.35),
+    0 0 40px rgba(200, 220, 255, 0.25);
+  animation: bloom-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes bloom-shimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+.picture{
+  padding: 20px;
+}
+
+footer{
+  width: 100%;
+  text-align: center;
+  padding: 32px 0 16px;
+  color: #999;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background-color: #292A2D;
+  /* navbar has z-index:auto by default, so any react-chrono element with an
+     explicit z-index (its cards/dots use one internally) stacks above it
+     despite being fixed */
+  z-index: 1000;
+}
+
+.page{
+  /* pages other than Home have no top offset of their own, so their content
+     renders underneath the fixed navbar without this */
+  padding-top: 80px;
+}
+
+.navbar .center{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar ul{
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: #A9A9B3;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #ffffff;
+  /* react-chrono ships a global `a:hover { text-decoration: underline }`. It outranks
+     the `a { text-decoration: none }` rule above on specificity, so the reset has to be
+     repeated at the :hover level to keep links underline-free. */
+  text-decoration: none;
+}
+
+.bio-link{
+  color: #007BFF;
+}
+
+.bio-link:hover{
+  color: #7CB7FF;
+  text-decoration: none;
+}
+
+/*
+  react-chrono (v3.3.3) only exposes card/title colors via its `theme` prop.
+  The connecting line is a hardcoded-black pseudo-element and the card body
+  text has no theme hook, so both are overridden here directly. Verified
+  against the live DOM (classnames are content-hashed by react-chrono's
+  goober build, so a version bump could change them and need re-checking).
+*/
+.timeline-page .iy9f2s0::before,
+.timeline-page .iy9f2s0::after {
+  background-color: #ffffff !important;
+  width: 2px !important;
+}
+
+.timeline-page .rc-card-text,
+.timeline-page .rc-card-text p {
+  color: #dcdcdc !important;
+}
+
+/*
+  react-chrono's vertical timeline wrapper hardcodes `min-height: 500px` and
+  `overflow: visible auto`, giving it its own internal scrollbar instead of
+  growing with its content. `.timeline-main-wrapper` is a stable class name
+  (also used as the element's id/data-testid), unlike the content-hashed
+  classes above, so it's safe to target directly.
+*/
+.timeline-page .timeline-main-wrapper {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.subtitle{
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 100;
+  margin-top: 5px;
+  color: #007BFF;
+  font-size: 20px;
+
+}
+
+.hash{
+  color: #007BFF;
+}
+
+.section-header{
+  font-weight: 300;
+}
+
+.page-header{
+  text-align: center;
+}
+
+.project-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.project-card{
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  background-color: #2f2f33;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.project-card-image{
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-card-title{
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 16px 16px 0;
+}
+
+.project-card-button{
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 6px;
+  margin: 12px 16px 16px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.project-card-button:hover{
+  background-color: #3395ff;
+}
+
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-content{
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background-color: #2f2f33;
+  border-radius: 12px;
+  padding: 32px 24px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close{
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #A9A9B3;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover{
+  color: #ffffff;
+}
+
+.modal-title{
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.modal-description{
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 150;
+  color: #dcdcdc;
+  line-height: 1.5;
+}
