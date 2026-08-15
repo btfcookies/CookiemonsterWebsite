@@ -38,7 +38,9 @@ function Home() {
       
        <h1 className='section-header'><span className='hash'># </span>Hardware</h1>
 
-      <p>I started exploring hardware in a Computer Science class where I built a fully functional slot machine using wood, cardboard, an Arduino, and some LCD screens. </p>
+      <p>I started exploring hardware in a Computer Science class where I built a fully functional slot machine using wood, cardboard, an Arduino, and some LCD screens.</p>
+      
+      <p>My current hardware projects include a garden box for brocolli microgreens that knows when the plants need to be watered, and a set of walkie talkies that use LoRa modules to transmit text up to 2 miles.</p>
       </h2>
 
       <footer>© 2026 Lawrence Tong</footer>
