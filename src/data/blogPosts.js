@@ -9,7 +9,17 @@
 // the image is missing, instead of shipping a broken <img> at runtime.
 
 const blogPosts = [
-   {
+  {
+    title: "Noise",
+    date: "August 15, 2026",
+    text:"I did some more analysis of star plots using a new sort algorithm that I wrote. After playing around for a bit with the algoritm, I found something interesting. As you can see in the first image, there is a ton of data points. However, the image below that one has very few data points.The star in the first image, TIC 257468692, is only about 46 parsecs from Earth. The star in the second image, TIC 347105212, is 1000 parsecs from Earth. After doing some research, I found out that the reason for this was noise. The same noise that causes photos taken in low light to be fuzzy. Stars that are super far away (such as TIC 347105212) have less photons picked up by TESS than ones closer. Since the flow of photons fluctuates following Poisson distribution, which causes noise. This results in rendering pipelines filtering out much of the data picked up. ",
+    images: [
+      {src: "/Figure_4.png", caption:"Graph for TIC 257468692, a star about 46 parsecs from Earth"},
+      {src: "/Figure_3.png", caption:"Graph for TIC 347105212, a star 1000 parsecs from Earth"}
+    ]
+
+  }, 
+  {
     title: "Stars",
     date: "August 15, 2026",
     text:"I recently found out about a Python library called lightkurve, which allows you to analyze data from the Kepler and TESS telescopes. I wrote a script that uses matplotlib to plot flux data for a selected star in the library. \nI started off by taking a look at some random stars, such as TIC 261136679 (recorded by the TESS telescope). When looking at the plot (shown in the image) I noticed two things. The first is the 5 dips in flux. After doing some research with Claude, I found out that these were caused by planets. Secondly, there is a large white gap in the center of the plot. Since there was no data whatsoever in that time period, I thought it must be some sort of issue in the antenna. After asking Claude, I found out that this was actually intentional. At the perigree of TESS (and most satellites)'s orbit, data collection is paused so that the antenna can be pointed down toward Earth to beam down collected data.",

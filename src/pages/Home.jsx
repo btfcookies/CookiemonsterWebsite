@@ -42,6 +42,7 @@ function Home() {
       
       <p>My current hardware projects include a garden box for brocolli microgreens that knows when the plants need to be watered, and a set of walkie talkies that use LoRa modules to transmit text up to 2 miles.</p>
       </h2>
+      
 
       <footer>© 2026 Lawrence Tong</footer>
     </div>
