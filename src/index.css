@@ -384,6 +384,34 @@ a:hover{
   white-space: pre-wrap;
 }
 
+.blog-post-images{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.blog-post-figure{
+  margin: 0;
+}
+
+.blog-post-image{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-post-caption{
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 150;
+  font-size: 14px;
+  color: #A9A9B3;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
 /*
   Below this width the navbar's five nav links plus the left-side name no
   longer fit in one row -- .center is position:absolute so it centers over

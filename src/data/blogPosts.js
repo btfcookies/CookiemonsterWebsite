@@ -1,4 +1,22 @@
+// Each post takes: title, date, text, and an optional `images` array.
+// Every image is { src, caption?, alt? }:
+//   src     - either an imported asset:  import fluxPlot from "../assets/blog/flux-plot.png"
+//             or a path under public/:   "/flux-plot.png"
+//   caption - text shown under the image (optional)
+//   alt     - screen-reader description; falls back to the caption (optional)
+//
+// Prefer the import form: Vite hashes the file and the build fails loudly if
+// the image is missing, instead of shipping a broken <img> at runtime.
+
 const blogPosts = [
+   {
+    title: "Stars",
+    date: "August 15, 2026",
+    text:"I recently found out about a Python library called lightkurve, which allows you to analyze data from the Kepler and TESS telescopes. I wrote a script that uses matplotlib to plot flux data for a selected star in the library. \nI started off by taking a look at some random stars, such as TIC 261136679 (recorded by the TESS telescope). When looking at the plot (shown in the image) I noticed two things. The first is the 4 dips in flux. After doing some research with Claude, I found out that these were caused by planets. Secondly, there is a large white gap in the center of the plot. Since there was no data whatsoever in that time period, I thought it must be some sort of issue in the antenna. After asking Claude, I found out that this was actually intentional. At the perigree of TESS (and most satellites)'s orbit, data collection is paused so that the antenna can be pointed down toward Earth to beam down collected data.",
+    images: [
+      { src: "/Figure_1.png", caption: "This is the plot that I made for TIC 261136679", alt: "temp" },
+    ],
+   },
   {
     title: "an error in qbreader",
     date: "May 13, 2026",
