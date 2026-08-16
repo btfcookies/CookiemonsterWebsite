@@ -12,7 +12,7 @@ const blogPosts = [
   {
     title: "Vibe Coding",
     date: "August 16, 2026",
-    text: "Vibe coding is the future, but not in the way most people think. Most people (to my knowledge) vibe code because its easier and more fun than learning how to code. In a way, this is immediate gratification. As always, delayed gratification is better. Vibe coders vibe code because they are under the illusion that coding is this boring, unenjoyable task. They see Leetcode, W3Schools, and boring Youtube tutorials. What they don't see is the other side of coding, after you become fluent in a programming language. Coding is far more enjoyable than vibe coding once you learn how to do it properly. The freedom to make whatever you want and not have to spend hours fixing AI slop is amazing. Dedicated to Nathaniel Shou"
+    text: "Vibe coding is the future, but not in the way most people think. Most people (to my knowledge) vibe code because its easier and more fun than learning how to code. In a way, this is immediate gratification. As always, delayed gratification is better. Vibe coders vibe code because they are under the illusion that coding is this boring, unenjoyable task. They see Leetcode, W3Schools, and boring Youtube tutorials. What they don't see is the other side of coding, after you become fluent in a programming language. Coding is far more enjoyable than vibe coding once you learn how to do it properly. The freedom to make whatever you want and not have to spend hours fixing AI slop is amazing. The reason vibe coding is still the future is because of how easily people are lured into it. Since [most] vibe coders eventually realize what I have just stated, it produces more dedicated programmers. Dedicated to Nathaniel Shou"
 
 
   },
