@@ -10,6 +10,13 @@
 
 const blogPosts = [
   {
+    title: "Vibe Coding",
+    date: "August 16, 2026",
+    text: "Vibe coding is the future, but not in the way most people think. Most people (to my knowledge) vibe code because its easier and more fun than learning how to code. In a way, this is immediate gratification. As always, delayed gratification is better. Vibe coders vibe code because they are under the illusion that coding is this boring, unenjoyable task. They see Leetcode, W3Schools, and boring Youtube tutorials. What they don't see is the other side of coding, after you become fluent in a programming language. Coding is far more enjoyable than vibe coding once you learn how to do it properly. The freedom to make whatever you want and not have to spend hours fixing AI slop is amazing. Dedicated to Nathaniel Shou"
+
+
+  },
+  {
     title: "Noise",
     date: "August 15, 2026",
     text:"I did some more analysis of star plots using a new sort algorithm that I wrote. After playing around for a bit with the algorithm, I found something interesting. As you can see in the first image, there is a ton of data points. However, the image below that one has very few data points.The star in the first image, TIC 257468692, is only about 46 parsecs from Earth. The star in the second image, TIC 347105212, is 1000 parsecs from Earth. After doing some research, I found out that the reason for this was noise. The same noise that causes photos taken in low light to be fuzzy. Stars that are super far away (such as TIC 347105212) have less photons picked up by TESS than ones closer. Since the flow of photons fluctuates following Poisson distribution, which causes noise. This results in rendering pipelines filtering out much of the data picked up. ",
