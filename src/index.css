@@ -20,6 +20,7 @@ body{
   flex-direction: column;
   align-items: center;
   width: 100%;
+  text-align: center;
 }
 
 .Typewriter__wrapper {
@@ -45,6 +46,7 @@ body{
   max-width: 900px;
   padding: 20px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .bloom-text{
