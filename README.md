@@ -32,10 +32,18 @@ public/             static files served at the site root
 
 ## Deployment
 
-Not currently deployed. Because this is a Vite app, the built output in `dist/`
-must be published — serving the repository root directly will not work. If
-deploying to GitHub Pages as a project site, set `base: '/CookiemonsterWebsite/'`
-in `vite.config.js` and publish `dist/` via a build workflow.
+Deployed on **Vercel** at https://www.lawrencetong.dev (apex `lawrencetong.dev`
+308-redirects to `www`). Vercel builds `npm run build` and publishes `dist/`.
+
+`vercel.json` holds the SPA fallback: this app uses `BrowserRouter`, so any deep
+link (`/work`, `/blog`, ...) has no file behind it and must be rewritten to
+`/index.html` or the host returns its own 404. Vercel applies `rewrites` only
+after the filesystem check, so real files under `/assets/` and `public/` still
+serve normally.
+
+`netlify.toml` is left over from an earlier Netlify plan and is **not** what
+serves this site — Vercel ignores it. If you ever move hosts, that file already
+carries the equivalent redirect rule.
 
 ## History
 

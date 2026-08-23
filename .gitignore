@@ -23,3 +23,6 @@ temp.txt
 *.njsproj
 *.sln
 *.sw?
+
+# Vercel CLI project linkage
+.vercel
