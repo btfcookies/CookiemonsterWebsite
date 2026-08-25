@@ -377,6 +377,12 @@ a:hover{
   margin-bottom: 24px;
 }
 
+.blog-post-math{
+  font-family: 'Cambria Math', 'STIX Two Math', Georgia, serif;
+  font-style: italic;
+  color: #E6E6EF;
+}
+
 .blog-post-text{
   font-family: 'Segoe UI', sans-serif;
   font-weight: 150;

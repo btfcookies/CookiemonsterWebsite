@@ -6,6 +6,20 @@
  */
 
 /**
+ * Splits text on //math// segments and wraps each one in a math-styled span.
+ * @param {string} text
+ */
+function renderWithMath(text) {
+  return text.split(/\/\/(.+?)\/\//g).map((part, index) =>
+    index % 2 === 1 ? (
+      <span className="blog-post-math" key={index}>{part}</span>
+    ) : (
+      part
+    )
+  )
+}
+
+/**
  * @param {{ title: string, date: string, text: string, images?: BlogImage[] }} props
  */
 function BlogPost(props) {
@@ -15,7 +29,7 @@ function BlogPost(props) {
     <article className="blog-post">
       <h1 className="blog-post-title"><span className="hash"># </span>{title}</h1>
       <p className="blog-post-date">{date}</p>
-      <p className="blog-post-text">{text}</p>
+      <p className="blog-post-text">{renderWithMath(text)}</p>
       {images.length > 0 && (
         <div className="blog-post-images">
           {images.map((image) => (
