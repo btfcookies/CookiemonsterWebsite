@@ -8,7 +8,17 @@
 // Prefer the import form: Vite hashes the file and the build fails loudly if
 // the image is missing, instead of shipping a broken <img> at runtime.
 
+import { text } from "express"
+
 const blogPosts = [
+  {
+    title: "Scrypt KDF",
+    date: "September 11 2026",
+    text: "When developing a password encyption system for TAD Chat (a forum for students), I came across the scrypt key derivation function (KDF). Its used to hash strings in a way that makes brute force attacks extremely expensive. It takes string of random data (a salt) and the inputted value and uses PBKDF2 to expand it. This huge value is then saved into a huge block of memory, repeated //N// times for the set cost parameter. The function then loops all the way back and randomly reads data to calculate the final mixed value, all while the huge block of memory is allocated. This makes brute force algorithms extremely slow and costly.",
+    images: [
+      {src: "/scrypt.avif", caption:"Diagram of the scrypt algorithm"},
+    ]
+  },
   {
     title: "QBReader reading",
     date: "August 24, 2026",
