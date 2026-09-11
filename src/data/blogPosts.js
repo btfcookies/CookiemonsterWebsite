@@ -8,7 +8,6 @@
 // Prefer the import form: Vite hashes the file and the build fails loudly if
 // the image is missing, instead of shipping a broken <img> at runtime.
 
-import { text } from "express"
 
 const blogPosts = [
   {
