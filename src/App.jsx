@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Home from './pages/Home.jsx'
 import Timeline from './pages/Timeline.jsx'
 import Work from './pages/Work.jsx'
@@ -38,6 +39,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <Analytics />
     </>
   )
 }
