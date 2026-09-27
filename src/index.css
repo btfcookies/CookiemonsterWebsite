@@ -1,7 +1,4 @@
 body{
-  /* !important: react-chrono injects its own global `body { background-color, color, font-family }`
-     rule at mount time, which loads after this stylesheet and would otherwise win the cascade
-     and repaint the whole site (not just the timeline) white with dark text. */
   background-color: #252525 !important;
   color: #ffffff !important;
 }
@@ -96,9 +93,6 @@ footer{
   padding-left: 20px;
   padding-bottom: 20px;
   background-color: #292A2D;
-  /* navbar has z-index:auto by default, so any react-chrono element with an
-     explicit z-index (its cards/dots use one internally) stacks above it
-     despite being fixed */
   z-index: 1000;
 }
 
@@ -129,9 +123,6 @@ a{
 
 a:hover{
   color: #ffffff;
-  /* react-chrono ships a global `a:hover { text-decoration: underline }`. It outranks
-     the `a { text-decoration: none }` rule above on specificity, so the reset has to be
-     repeated at the :hover level to keep links underline-free. */
   text-decoration: none;
 }
 
@@ -142,37 +133,6 @@ a:hover{
 .bio-link:hover{
   color: #7CB7FF;
   text-decoration: none;
-}
-
-/*
-  react-chrono (v3.3.3) only exposes card/title colors via its `theme` prop.
-  The connecting line is a hardcoded-black pseudo-element and the card body
-  text has no theme hook, so both are overridden here directly. Verified
-  against the live DOM (classnames are content-hashed by react-chrono's
-  goober build, so a version bump could change them and need re-checking).
-*/
-.timeline-page .iy9f2s0::before,
-.timeline-page .iy9f2s0::after {
-  background-color: #ffffff !important;
-  width: 2px !important;
-}
-
-.timeline-page .rc-card-text,
-.timeline-page .rc-card-text p {
-  color: #dcdcdc !important;
-}
-
-/*
-  react-chrono's vertical timeline wrapper hardcodes `min-height: 500px` and
-  `overflow: visible auto`, giving it its own internal scrollbar instead of
-  growing with its content. `.timeline-main-wrapper` is a stable class name
-  (also used as the element's id/data-testid), unlike the content-hashed
-  classes above, so it's safe to target directly.
-*/
-.timeline-page .timeline-main-wrapper {
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: visible !important;
 }
 
 .subtitle{

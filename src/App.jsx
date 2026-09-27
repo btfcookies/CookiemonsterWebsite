@@ -1,7 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import Home from './pages/Home.jsx'
-import Timeline from './pages/Timeline.jsx'
 import Work from './pages/Work.jsx'
 import Research from './pages/Research.jsx'
 import Blog from './pages/Blog.jsx'
@@ -19,7 +18,6 @@ function App() {
           <div className="center">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/timeline">Timeline</Link></li>
               <li><Link to="/work">Projects</Link></li>
               <li><Link to="/research">My Work</Link></li>
               <li><Link to="/blog">Blog</Link></li>
@@ -32,7 +30,6 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/timeline" element={<Timeline />} />
           <Route path="/work" element={<Work />} />
           <Route path="/research" element={<Research />} />
           <Route path="/blog" element={<Blog />} />
