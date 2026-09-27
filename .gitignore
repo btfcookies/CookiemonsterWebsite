@@ -26,3 +26,6 @@ temp.txt
 
 # Vercel CLI project linkage
 .vercel
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
