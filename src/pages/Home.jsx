@@ -28,7 +28,7 @@ function Home() {
       <h2 className='bio'><span className='bloom-text'>hello there! </span>
       I'm Lawrence, a student developer trying to make an impact in the world of technology. I have been programming for 4 years, and I have spent 3 of those years as head developer at Eightbit Labs. My main interests related to programming are physics, neural systems, and machine learning. 
       
-      <p>When I'm not programming, I enjoy building hardware projects, playing chess, and playing quiz bowl. You can see some of the code for my hardware projects on <a href="https://github.com/btfcookies" className='bio-link'>my Github</a>.</p>
+      <p>When I'm not programming, I enjoy building hardware projects, playing chess, and playing quiz bowl. You can see some of the code for most of my projects on <a href="https://github.com/btfcookies" className='bio-link'>my Github</a>.</p>
       <p>Read more about my work <a href="/research" className='bio-link'>here</a></p>
 
       </h2>
