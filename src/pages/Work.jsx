@@ -1,18 +1,24 @@
 import ProjectCard from "./ProjectCard"
-import heroImage from "../assets/hero.png"
+import cecosunkImage from '../assets/favicon-light.svg'
 
 const projects = [
   {
-    name: "Reamus",
-    image: heroImage,
-    description: "An API that converts HTML to PDFs, built for developers who need reliable server-side rendering.",
-    link: "https://github.com/btfcookies",
+    name: "TAD Chat",
+    image: null,
+    description: "TAD Chat is a forum made for students to communicate.",
+    link: "https://chat.lawrencetong.dev",
   },
   {
     name: "Titanitron",
-    image: heroImage,
+    image: null,
     description: "A supervised learning model trained to predict survivors of the Titanic's sinking.",
     link: "https://github.com/btfcookies/titanic-prediction",
+  },
+  {
+    name: "CeCoSUNK",
+    image: cecosunkImage,
+    description: "CeCoSUNK is a browser based mathematically accurate celestial physics simulator.",
+    link: "https://cecosunk.lawrencetong.dev"
   },
 ]
 

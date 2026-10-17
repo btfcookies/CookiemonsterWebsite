@@ -26,7 +26,7 @@ function Home() {
         <h2 className='subtitle'>Student + Fullstack Dev</h2>
       </div>
       <h2 className='bio'><span className='bloom-text'>hello there! </span>
-      I'm Lawrence, a student developer trying to do something cool with his life. I have been programming for 4 years, and I have spent 3 of those years as head developer at Eightbit Labs. My main interests related to programming are physics, neural systems, and machine learning. 
+      I'm Lawrence, a student developer trying to do something cool with his life. I have been programming for 4 years, and I have spent 3 of those years as head developer at Eightbit Labs. My main interests in the field of programming are computational physics, reinforcement learning, and probability theory. 
       
       <p>When I'm not programming, I enjoy building hardware projects, playing quiz bowl, and speedcubing. You can see some of the code for most of my projects on <a href="https://github.com/btfcookies" className='bio-link'>my Github</a>.</p>
       <p>Read more about my work <a href="/research" className='bio-link'>here</a></p>

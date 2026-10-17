@@ -16,9 +16,9 @@ export default function Research() {
           <div className="text">
             <div id="programming">
               <h1 className="section-header"><span className="hash"># </span>Programming</h1>
-              <p>I used to mainly work on game development using engines such as Unity and Roblox Studio. You can still see these projects <a href="/work" className='bio-link'>here</a>. Recently, I have shifted my focus to web development and machine learning. My current projects include Reamus, an API that converts HTML to PDFs, and Titanitron, a supervised learning model made to predict survivors of the Titanic's sinking which you can view <a href="https://github.com/btfcookies/titanic-prediction" className='bio-link'>here</a>.</p> 
+              <p>I started programming in 4th grade, slowly introducing myself to the world of game development. After a year or so making games, I shifted my focus to web development and machine learning. My current projects include TAD Chat, a student forum with 157 users, and CeCoSUNK, a browser based celestial physics simulator. Both can be viewed <a href="https://github.com/btfcookies/titanic-prediction" className='bio-link'>here</a>.</p> 
 
-              <p> Earlier this year, I merged my interests in quiz bowl in coding by making Protoreader, a packet based quiz bowl practice website. I stopped working on this in March 2026, but I am now an active contributor to <a href="https://github.com/qbreader" className='bio-link'>QBReader</a>, the most widely used quiz bowl practice website. My work on QBReader mainly involves its singleplayer functionality and its packet parser, both of which you can view on Github.</p>
+              <p> In Febraury 2026, I merged my interests in quiz bowl and coding by making Protoreader, a packet based quiz bowl practice website. I stopped working on this in March 2026, but I am now an active contributor to <a href="https://github.com/qbreader" className='bio-link'>QBReader</a>, the most widely used quiz bowl practice website. My work on QBReader mainly involves its singleplayer functionality and its packet parser, both of which you can view on Github.</p>
             </div>
             <div id="hardware">
               <h1 className='section-header'><span className='hash'># </span>Hardware</h1>
